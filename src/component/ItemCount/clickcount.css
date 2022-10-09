@@ -1,0 +1,17 @@
+.itemcount-cont{
+    margin-bottom: 15px;
+}
+.btn-op{
+    width: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    width: 35px;
+    background-color: rgb(138, 221, 163);
+    border-radius: 15px;
+    cursor: pointer;
+}
+.number{
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px;
+}

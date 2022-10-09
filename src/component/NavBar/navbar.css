@@ -2,14 +2,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #85a1ad;
+    background-color: rgb(138, 221, 163);
 }
 .header-logo{
 display: flex;
 align-items: center;
 }
+
 .header-logo-a{
     display: flex;
+}
+.header-img-logo-text{
+    width: 130px;
+ 
 }
 .header-h1{
     color: #784719;

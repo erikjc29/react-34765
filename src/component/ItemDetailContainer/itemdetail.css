@@ -1,0 +1,29 @@
+.itemDetail{
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    border-radius: 30px;
+    margin-top: 5%;
+}
+.item-img{
+    overflow: hidden;
+    height: 100%;
+}
+.item-img-element{
+    object-fit: cover;
+    width: 500px;
+}
+
+.cont-item{
+    display: flex;
+    align-items: center;
+    background-color: rgba(17, 13, 13, 0.8); 
+}
+.item-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 30px ;
+}
