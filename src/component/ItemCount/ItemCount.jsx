@@ -1,25 +1,31 @@
 import React from 'react'
 import { useState } from 'react';
-import "./clickcount.css"
-function ItemCount(props) {
+// import "./clickcount.css"
+import Button from '../Button/Button';
+function ItemCount({stock, onAddToCart}) {
+    const [count, setCount] = useState(1);
 
-    const [click, setClick] = useState(1);
     function onAdd(){
-      if(click<props.stock){
-        setClick( click + 1 );
+      if(count<stock){
+        setCount( count + 1 );
       }
         
     }
     function onSub(){
-        if(click>1){
-            setClick( click - 1 )
+        if(count>1){
+            setCount( count - 1 )
         }        
     }
+
   return (
     <div className='itemcount-cont'>
-      <button className='btn-op' onClick={onSub}>-</button>
-      <span className='number'>{click}</span>
-      <button className='btn-op' onClick={onAdd}>+</button>
+      <div>
+      <Button className='btn-op' onClick={onSub}>-</Button>
+      <strong className='number'>{count}</strong>
+      <Button className='btn-op' onClick={onAdd}>+</Button>
+      </div>
+      
+      <Button onClick={()=>{onAddToCart(count)}}>Agregar al Carrito</Button>
     </div>
   )
 }

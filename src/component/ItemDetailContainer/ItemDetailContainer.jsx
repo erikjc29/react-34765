@@ -1,30 +1,32 @@
 import React,{useState,useEffect} from 'react'
 import "./itemdetailcontainer.css"
-import {getSingleData} from "../../mockAPI/mockAPI"
+import {getSingleData} from "../../services/firebase"
 import ItemDetail from './ItemDetail';
 import {useParams} from "react-router-dom"
 
-function ItemDetailContainer(props) {
-  const [item,setItem]=useState([]);
-  
+function ItemDetailContainer() {
+  const [item,setItem]=useState({});
+  const [feedbackMsg,setFeedbackMsg]=useState(null)
   const {itemID}= useParams()
 
     useEffect(()=>{
       getSingleData(itemID).then((data)=>{
-      setItem(data);})}
-      ,[itemID]);
+      setItem(data);})
+    .catch((error)=>{setFeedbackMsg(error.message)})
+    },[itemID]);
+
   return (
     <main className='main-cont'>
     <div className='flex'>
+      { feedbackMsg !== null 
+      ?
+        <h4>Error {feedbackMsg}</h4>  
+      :
       <ItemDetail
-        key={item.id}
-        title={item.title}
-        img={item.img}
-        price={item.price}
-        detail={item.detail}
-        stock={item.stock}
-        expired={item.expired}
+        item={item}
       />
+      }
+      
     </div>
    
      </main>

@@ -1,0 +1,19 @@
+.cont-input{
+    width: 500px;
+    margin: auto;
+}
+
+.label{
+    font-size: 20px;
+    font-weight: bold;
+    margin-right:10px ;
+    color: white;
+}
+.input{
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    height: 20px;
+    padding: 3px;
+    margin: auto;
+}

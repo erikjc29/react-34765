@@ -1,9 +1,12 @@
 import React from 'react'
 import "./item.css"
 import Button from '../Button/Button'
-import ItemCount from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom'
 function Item(props) {
+
+  const offerStyle={
+    color: props.offer=== true ? "green" : "white"
+  }
 
   return (
     <div className='card'>
@@ -14,8 +17,8 @@ function Item(props) {
 
             <h2 className='detail-h2'>{props.title}</h2>
             <p className='detail-p'>{props.detail}</p>
-            <h4 className='detail-h4'>
-                {props.offer ? <p>oferta</p> : <></>}$ {props.price}
+            <h4 className='detail-h4' style={offerStyle}>
+                {props.offer && <p>oferta!</p> }$ {props.price}
             </h4>
     
         </div>

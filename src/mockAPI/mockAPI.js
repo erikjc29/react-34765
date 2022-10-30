@@ -6,7 +6,7 @@ const data=[
         detail:"Shoes StreetWear Diseñadas por Veed", 
         price:20000, 
         expired:true,
-        offer:"", 
+        offer:true, 
         stock:10,
         category:"zapatillas"
         },
@@ -84,19 +84,25 @@ export function getData(){
 }
 
 export function getSingleData(idParams){
-    return new Promise((resolve)=>{
+    return new Promise((resolve,reject)=>{
         let dataReq=data.find((item)=>{
-           return item.id == Number(idParams)})
+           return item.id === Number(idParams)})
         console.log(dataReq)
-        setInterval(()=>
-            resolve(dataReq),2000)
+        setInterval(()=>{
+            if(dataReq === undefined)
+            reject(new Error("No se pudo encontrar el producto"))
+            else{
+                resolve(dataReq)
+            }
+            
+        
+        },2000)
     })
 }
-
 export function getItemsByCategory(idCategoryParams){
     return new Promise((resolve)=>{
         let filterItems= data.filter( 
-            (item) => item.category == idCategoryParams)
+            (item) => item.category === idCategoryParams)
         setInterval(()=>resolve(filterItems),2000)
     })
 }

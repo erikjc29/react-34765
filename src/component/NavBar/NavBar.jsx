@@ -7,8 +7,8 @@ function NavBar() {
     <header className="header-cont">
       <Link to="/">
       <div className="header-logo">
-        <img className="header-img-logo" src="https://img.icons8.com/color/100/000000/ninja-head.png" />
-        <img className="header-img-logo-text" src="https://www.ambiance-sticker.com/al_copyrighter.php?image=images/Image/sticker-graffiti-ninja-ambiance-sticker-KC_4212.png&sens=25&color=28&forcew=310&forceh=310" />
+        <img className="header-img-logo" src="https://img.icons8.com/color/100/000000/ninja-head.png" alt="logo" />
+        <img className="header-img-logo-text" src="https://www.ambiance-sticker.com/al_copyrighter.php?image=images/Image/sticker-graffiti-ninja-ambiance-sticker-KC_4212.png&sens=25&color=28&forcew=310&forceh=310" alt="logo" />
       </div>
       </Link>
       

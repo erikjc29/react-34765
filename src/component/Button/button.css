@@ -1,11 +1,13 @@
 .btn-buy{
     background-color: rgb(138, 221, 163);
-    width: 200px;
+    width: auto;
     height: 30px;
     color: black;
     font-weight: bold;
     border-radius: 15px;
     cursor: pointer;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .btn-buy:hover{
     background-color: rgb(36, 58, 43);
