@@ -15,7 +15,7 @@ Proyecto orientado a una tienda virtual para la compra de productos. Enfocado en
 </p>
 
 
-![screenshot](../proyect/public/Ecommerce-Proyect.PNG)
+![screenshot](./public/Ecommerce-Proyect.PNG)
 
 Se aplico el metodo de Sinle Page Aplication para una experiencia mas fluida para los usuario, se aplico Firebase para la base de datos en los que se guardan los productos y los pedidos
 

@@ -1,21 +1,21 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./itemdetail.css";
 import ItemCount from "../ItemCount/ItemCount";
-import { useContext } from 'react'
-import { cartContext } from '../../context/cartContext'
+import { useContext } from "react";
+import { cartContext } from "../../context/cartContext";
 import { Link } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import Button from "../Button/Button";
-function ItemDetail({item}) {
-  const [count,setCount]= useState(0)
-  const {addToCart}= useContext(cartContext)
+function ItemDetail({ item }) {
+  const [count, setCount] = useState(0);
+  const { addToCart } = useContext(cartContext);
 
-  function handleAddToCard(count){
-    addToCart(item,count)
-    setCount(count)
+  function handleAddToCard(count) {
+    addToCart(item, count);
+    setCount(count);
   }
 
-  if(item.title){
+  if (item.title) {
     return (
       <div className="itemDetail">
         <div className="cont-item">
@@ -29,22 +29,20 @@ function ItemDetail({item}) {
             <h4 className="item-detail-h4">
               {item.offer ? <p>oferta</p> : <></>}$ {item.price}
             </h4>
-            {count === 0 ? <ItemCount onAddToCart={handleAddToCard} stock={item.stock} />
-             : 
-             <Link to="/cart" ><Button>Ver el Carrito</Button></Link>
-    }
-            
+            {count === 0 ? (
+              <ItemCount onAddToCart={handleAddToCard} stock={item.stock} />
+            ) : (
+              <Link to="/cart">
+                <Button>Ver el Carrito</Button>
+              </Link>
+            )}
           </div>
         </div>
       </div>
     );
+  } else {
+    return <Loader />;
   }
-  
-  else{
-    return <Loader/>;
-  }
-  
-  
 }
 
 export default ItemDetail;

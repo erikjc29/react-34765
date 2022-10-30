@@ -1,6 +1,5 @@
 .cont-item-cart{
     display: flex;
-
     justify-content: space-between;
     justify-items: center;
     border: 1px solid black;
@@ -15,7 +14,6 @@
     margin-bottom: 10px;
    
 }
-
 .item-cart-img{
     width: 50%;
     border-radius: 15px;

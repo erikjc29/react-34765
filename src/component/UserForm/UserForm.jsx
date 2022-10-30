@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { createBuyOrder } from "../../services/firebase";
 import { useNavigate } from "react-router-dom";
 import "sweetalert2/src/sweetalert2.scss";
@@ -6,11 +6,11 @@ import Swal from "sweetalert2/dist/sweetalert2.js";
 import InputForm from "./InputForm";
 import { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
-import Button from "../Button/Button"
-import "./userform.css"
+import Button from "../Button/Button";
+import "./userform.css";
 export default function UserForm() {
   const navigate = useNavigate();
-    const {cart, getTotalPrice,clearCart}=useContext(cartContext)
+  const { cart, getTotalPrice, clearCart } = useContext(cartContext);
 
   const [userData, setUserData] = useState({
     name: "",
@@ -27,15 +27,14 @@ export default function UserForm() {
   }
 
   function onSubmit(evt) {
-    evt.preventDefault()
+    evt.preventDefault();
     const orderData = {
       buyerData: userData,
       cart: cart,
       total: getTotalPrice(),
       date: new Date(),
-    }
-    console.log(orderData)
-    clearCart()
+    };
+    clearCart();
     createBuyOrder(orderData).then((respuesta) => {
       Swal.fire({
         title: "Gracias!",
@@ -49,7 +48,6 @@ export default function UserForm() {
   }
 
   return (
-
     <form onSubmit={onSubmit} className="Cont-Formulario">
       <h3 className="h3">Complete con su datos</h3>
       <InputForm
@@ -71,7 +69,6 @@ export default function UserForm() {
         onChange={onInputChange}
       />
       <Button type="submit">Crear orden</Button>
-      
     </form>
   );
 }
